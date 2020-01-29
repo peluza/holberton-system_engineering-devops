@@ -1,0 +1,7 @@
+#!/bin/bash
+git add .
+git commit -m "shell"
+git push -u origin master
+
+edisonisaza@gmail.com
+AlFa03144!
