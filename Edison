@@ -1,4 +1,6 @@
 #!/bin/bash
 git add .
-git commit -m "shell"
+echo ingrese commit:
+read  a 
+git commit -m $a
 git push -u origin master
