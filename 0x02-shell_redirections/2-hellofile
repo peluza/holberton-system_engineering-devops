@@ -1,2 +1,2 @@
 #!/bin/bash
-cd etc && tail passwd
+cd etc && cat passwd
