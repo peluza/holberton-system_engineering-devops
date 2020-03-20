@@ -1,0 +1,8 @@
+#!/bin/bash
+git add .
+echo write  commit:
+read  a 
+git commit -m $a
+echo write oringin
+read b
+git push -u origin $b
