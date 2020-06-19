@@ -9,7 +9,7 @@ do
         elif [ $count -eq 8 ];then
                 echo "good luck"
         else
-                echo "Holberton Schoolco"
+                echo "Holberton School"
         fi
         ((count++))
 done
