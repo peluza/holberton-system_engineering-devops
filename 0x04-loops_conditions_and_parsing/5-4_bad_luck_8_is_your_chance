@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# bad_luck_8_is_your_chance
 count=1
 end=10
 while [ $end -ge $count ]
