@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# for_golberton_school
 for i in $(seq 1 10);do
         echo "Holberton School"
         ((i++))
