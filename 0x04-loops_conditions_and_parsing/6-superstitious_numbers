@@ -1,18 +1,16 @@
 #!/usr/bin/env bash
+# superstitious_numbers
 count=1
 end=20
 while [ $end -ge $count ]
 do
         if [ $count -eq 4 ];then
                 echo "bad luck from China"
-        fi
-        if [ $count -eq 9 ];then
+        elif [ $count -eq 9 ];then
                 echo "bad luck from Japan"
-        fi
-        if [ $count -eq 17 ];then
+        elif [ $count -eq 17 ];then
                 echo "bad luck from Italy"
-        fi
-        if [ $count -ne 9 ] && [ $count -ne 4 ] && [ $count -ne 17 ];then
+        else
                 echo $count
         fi
         ((count++))
