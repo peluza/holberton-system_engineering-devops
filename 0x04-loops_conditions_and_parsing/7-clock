@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
-for i in $(seq 0 12);do
+# clock
+i=0
+j=1
+number_1=12
+number_2=59
+while [ $number_1 -ge $i ];do
         echo "Hour: $i"
         ((i++))
-        for j in $(seq 1 59);do
+        j=1
+        while [ $number_2 -ge $j ];do
                 echo "$j"
                 ((j++))
         done
