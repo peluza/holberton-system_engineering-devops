@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+count=1
+end=100
+operador1=3
+operador2=5
+while [ $end -ge $count ]
+do
+        result_3=$((count%operador1))
+        result_5=$((count%operador2))
+        if [  $result_3 -eq 0 ] && [ $result_5 -eq 0 ];then
+                echo "FizzBuzz"
+        elif [ $result_3 -eq 0 ];then
+                echo "Fizz"
+        elif [ $result_5 -eq 0 ];then
+                echo "Buzz"
+        else 
+                echo "$count"
+        fi
+        ((count++))
+done
