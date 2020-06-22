@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 # 101-manage_my_process
-ARGV=("$@")
-if [ "${ARGV[0]}" = "start" ];then
-        echo "manage_my_process started"
-        ./manage_my_process &
-        echo $! > "/var/run/my_process.pid"
-elif [ "${ARGV[0]}" = "stop" ];then
-        echo "manage_my_process stopped"
-        pkill -f manage_my_process &
-        rm /var/run/my_process.pid
-elif [ "${ARGV[0]}" = "restart" ];then
-        pkill -f manage_my_process &
-        rm /var/run/my_process.pid
-        echo "manage_my_process restarted"
-        ./manage_my_process &
-        echo $! > "/var/run/my_process.pid"
-else
-        echo "Usage: manage_my_process {start|stop|restart}"
-fi
+case ARGV=("$@") in
+        start)  
+                echo "manage_my_process started"
+                ./manage_my_process &
+                echo $! > "/var/run/my_process.pid"
+        stop)   
+                echo "manage_my_process stopped"
+                pkill -f manage_my_process &
+                rm /var/run/my_process.pid
+        restart)
+                pkill -f manage_my_process &
+                rm /var/run/my_process.pid
+                echo "manage_my_process restarted"
+                ./manage_my_process &
+                echo $! > "/var/run/my_process.pid"
+        *)
+                echo "Usage: manage_my_process {start|stop|restart}"
+esac
