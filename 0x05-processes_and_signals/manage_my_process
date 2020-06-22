@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# manage_my_process
+i=2
+j=0
+while [ "$j" -le "$i" ];do
+        echo "I am alive!" >> /tmp/my_process
+        i="$((i+2))"
+        j="$((j+2))"
+        sleep 2
+done
