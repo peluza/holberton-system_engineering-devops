@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 101-manage_my_process
+# manage_my_process_
 case $1 in
         start)  
                 ./manage_my_process &
@@ -8,12 +8,12 @@ case $1 in
                 ;;
         stop)   
                 pkill -f ./"manage_my_process"
-                sudo rm -R /var/run/my_process.pid
+                rm /var/run/my_process.pid
                 echo "manage_my_process stopped"
                 ;;
         restart)
                 pkill -f ./"manage_my_process"
-                sudo rm -R /var/run/my_process.pid
+                rm /var/run/my_process.pid
                 ./manage_my_process &
                 echo $! > "/var/run/my_process.pid"
                 echo "manage_my_process restarted"
