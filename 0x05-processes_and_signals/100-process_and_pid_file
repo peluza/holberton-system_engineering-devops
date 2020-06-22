@@ -8,8 +8,7 @@ while [ $j -le "$i" ];do
         i="$((i+2))"
         j="$((j+2))"
         sleep 2
-        trap 'echo "I hate the kill command"' 15
+        trap 'echo "I hate the kill command"; rm /var/run/holbertonscript.pid; exit' 15
         trap 'echo "Y U no love me?!"' 2
         trap 'rm /var/run/holbertonscript.pid; exit' 3
-        trap 'rm /var/run/holbertonscript.pid; exit' 15
 done
