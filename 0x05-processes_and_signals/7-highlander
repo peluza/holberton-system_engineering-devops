@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# highlander
+i=2
+j=0
+while [ $j -le "$i" ];do
+        echo "To infinity and beyond"
+        i="$((i+2))"
+        j="$((j+2))"
+        sleep 2
+        trap 'echo "I am invincible!!!"' 15
+done
