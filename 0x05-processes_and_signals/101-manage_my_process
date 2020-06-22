@@ -2,21 +2,21 @@
 # 101-manage_my_process
 case $1 in
         start)  
-                echo "manage_my_process started"
                 ./manage_my_process &
                 echo $! > "/var/run/my_process.pid"
+                echo "manage_my_process started"
                 ;;
         stop)   
-                echo "manage_my_process stopped"
                 pkill -f manage_my_process &
                 rm /var/run/my_process.pid
+                echo "manage_my_process stopped"
                 ;;
         restart)
                 pkill -f manage_my_process &
                 rm /var/run/my_process.pid
-                echo "manage_my_process restarted"
                 ./manage_my_process &
                 echo $! > "/var/run/my_process.pid"
+                echo "manage_my_process restarted"
                 ;;
         *)
                 echo "Usage: manage_my_process {start|stop|restart}"
