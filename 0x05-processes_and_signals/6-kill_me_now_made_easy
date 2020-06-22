@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# kill_me_now_made_easy
+pkill -f 4-to_infinity_and_beyond
