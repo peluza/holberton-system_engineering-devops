@@ -3,8 +3,6 @@
 i=2
 j=0
 echo $$ > /var/run/holbertonscript.pid
-trap 'rm /var/run/holbertonscript.pid' 3
-trap 'rm /var/run/holbertonscript.pid' 15
 while [ $j -le "$i" ];do
         echo "To infinity and beyond"
         i="$((i+2))"
@@ -12,4 +10,6 @@ while [ $j -le "$i" ];do
         sleep 2
         trap 'echo "I hate the kill command"' 15
         trap 'echo "Y U no love me?!"' 2
+        trap 'rm /var/run/holbertonscript.pid; exit' 3
+        trap 'rm /var/run/holbertonscript.pid; exit' 15
 done
