@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <sys/wait.h>
 
+int infinite_while(void);
 /**
  * infinite_while - the funtion infinite_while
  * Return: int
