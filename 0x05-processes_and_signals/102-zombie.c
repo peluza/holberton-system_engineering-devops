@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <sys/wait.h>
 
-int infinite_while(void);
 /**
  * infinite_while - the funtion infinite_while
  * Return: int
@@ -36,7 +35,7 @@ int main(void)
 		else if (my_pid > 0)
 			printf("Zombie process created, PID: %d\n", my_pid);
 		else
-			exit(1);
+			exit(0);
 		count++;
 	}
 	infinite_while();
