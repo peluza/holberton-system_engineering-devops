@@ -24,10 +24,10 @@ int infinite_while(void)
 
 int main(void)
 {
-	int count = 0, i = 5;
+	int count = 0;
 	pid_t my_pid;
 
-	while (count < i)
+	while (count < 5)
 	{
 		my_pid = fork();
 		if (my_pid == 0)
