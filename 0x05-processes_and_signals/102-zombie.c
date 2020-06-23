@@ -25,7 +25,8 @@ int infinite_while(void)
 
 int main(void)
 {
-	int my_pid = 0, count = 0, i = 5;
+	int count = 0, i = 5;
+	pid_t my_pid;
 
 	while (count < i)
 	{
