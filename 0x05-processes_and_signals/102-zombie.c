@@ -2,7 +2,6 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <stdlib.h>
-#include <sys/wait.h>
 
 /**
  * infinite_while - the funtion infinite_while
