@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# change ip localhost and add host at ip
+add_ip=8.8.8.8
+host_fc=facebook.com
+
+cp /etc/hosts ~/hosts.new
+sed -i 's/127.0.0.1\s*localhost/127.0.0.2 localhost/' ~/hosts.new
+echo $add_ip $host_fc >> ~/hosts.new
+cp -f ~/hosts.new /etc/hosts
+rm ~/hosts.new
