@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+#conection ssh
 ssh -i ~/.ssh/holberton ubuntu@35.190.152.71
 
