@@ -2,5 +2,6 @@
 #Web servers are the piece of software generating and serving HTML pages
 apt-get update
 apt-get -y install nginx
-echo "Holberton School for the win!" | tee /var/www/html/index.html
 service nginx start
+echo "Holberton School for the win!" | tee /var/www/html/index.html
+service nginx restart
