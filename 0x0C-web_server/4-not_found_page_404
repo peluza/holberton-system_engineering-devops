@@ -7,6 +7,6 @@ echo "Holberton School for the win!" | tee /var/www/html/index.html
 service nginx restart
 sudo sed -i "46i rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
 service nginx restart
-echo "Ceci n'est pas une page\n" | sudo tee /usr/share/nginx/html/custom_404.html
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
 sed -i "35 a \ \terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}" /etc/nginx/sites-enabled/default
 service nginx restart
