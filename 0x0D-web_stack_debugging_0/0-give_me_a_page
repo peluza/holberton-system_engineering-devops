@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#create apache
+apt -y install apache2
+echo "Hello Holberton" | tee /var/www/html/index.html
+sudo service apache2 start
