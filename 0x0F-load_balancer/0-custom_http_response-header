@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#have a custom 404 page that contains the string Ceci
+apt-get update
+apt-get -y install nginx
+service nginx start
+echo "Holberton School for the win!" | tee /var/www/html/index.html
+sed -i "46i rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" | tee /usr/share/nginx/html/custom_404.html
+sed -i "35 a \ \terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}" /etc/nginx/sites-enabled/default
+sed -i "11 a \ \tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+service nginx restart
