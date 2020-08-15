@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 #configure ngix listen port
 chmod -R 777 /etc/nginx
