@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #stop the service ngix
 sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
-/etc/init.d/nginx stop
+nginx -s quit
