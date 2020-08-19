@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+#display information about subdomains.
+
+subdomain(){
+        ip_www=$(dig www."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}')
+        ip_lb_1=$(dig lb-01."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}')
+        ip_web_01=$(dig web-01."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}')
+        ip_web_02=$(dig web-02."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}')
+        RT_www=$(dig www."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $4}')
+        RT_lb_1=$(dig lb-01."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $4}')
+        RT_web_01=$(dig web-01."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $4}')
+        RT_web_02=$(dig web-02."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $4}')
+        echo "The subdomain www is a "$RT_www" record and points to "$ip_www""
+        echo "The subdomain lb-01 is a  "$RT_lb_1" record and points to "$ip_lb_1""
+        echo "The subdomain web-01 is a "$RT_web_01" record and points to "$ip_web_01""
+        echo "The subdomain web-02 is a "$RT_web_02" record and points to "$ip_web_02""
+}
+subdomain_persnal(){
+        ip=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}')
+        RT=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $4}')
+        echo "The subdomain "$2" is a "$RT" record and points to "$ip""
+}
+if [[ $1 != "" && $2 == "" ]]; then
+        subdomain "$1" "$2"   
+elif [[ $1 != "" && $2 != "" ]]; then
+        subdomain_persnal "$1" "$2"
+elif [[ $1 == "" ]]; then
+        exit
+fi
