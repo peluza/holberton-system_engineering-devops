@@ -3,6 +3,8 @@
 sudo useradd nginx
 sudo passwd nginx
 pkill apache2
+apt-get update -y
+apt-get -y install nginx
 chmod 777 /etc/nginx/nginx.conf
 sed -i "s/80/8080/g" /etc/nginx/sites-enabled/default
 sudo -u nginx service nginx start
