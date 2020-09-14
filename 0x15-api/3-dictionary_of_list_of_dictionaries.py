@@ -12,8 +12,8 @@ if __name__ == "__main__":
     req_id_all = requests.get(url_id_all).json()
     FILE = "todo_all_employees.json"
     dict_json_end = {}
+    list_json = []
     for users in req_user:
-        list_json = []
         USER_ID = users.get('id')
         USERNAME = users.get("username")
         for task in req_id_all:
@@ -23,7 +23,7 @@ if __name__ == "__main__":
                 dic = {'task': TASK_TITLE,
                        'completed': TASK_COMPLETED_STATUS, 'username': USERNAME}
                 list_json.append(dic)
-    dict_json_end = {USER_ID: list_json}
+        dict_json_end = {USER_ID: list_json}
     json_str = json.dumps(dict_json_end)
     with open(FILE, mode="w", encoding='utf-8') as file_json:
         file_json.write(json_str)
