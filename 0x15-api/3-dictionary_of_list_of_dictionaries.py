@@ -23,7 +23,7 @@ if __name__ == "__main__":
                 dic = {'task': TASK_TITLE,
                        'completed': TASK_COMPLETED_STATUS, 'username': USERNAME}
                 list_json.append(dic)
-        dict_json_end = {USER_ID: list_json}
+        dict_json_end[USER_ID] = list_json
     json_str = json.dumps(dict_json_end)
     with open(FILE, mode="w", encoding='utf-8') as file_json:
         file_json.write(json_str)
